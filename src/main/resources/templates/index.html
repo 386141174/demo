@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  type="text/css" th:href="@{/css/layui.css}">
+
+    <title>Title</title>
+
+
+</head>
+<body>
+
+
+<div id="message" th:text="${message.name}" >Hello,Word!</div>
+<!--<div th:text="${}" >Hello,Word!</div>-->
+<input type="button" id="change"  th:value="s">
+
+</body>
+<script type="text/javascript" th:src="@{/js/layui.js}"></script>
+<script>
+layui.use(['layer','form'],function () {
+    var layer = layui.layer
+        ,form = layui.form;
+
+    layer.msg('Hello World');
+})
+    $(function () {
+        $("#change").on("click",change)
+
+    })
+
+    function change() {
+
+        $.get("change",function (data) {
+            console.log(data)
+            $("#message").html(data)
+        })
+    }
+
+
+
+</script>
+</html>
