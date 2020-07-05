@@ -11,13 +11,13 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
-        DocsConfig config = new DocsConfig();
-        config.setProjectPath("D://demo"); // root project path
-        config.setProjectName("ProjectName"); // project name
-        config.setApiVersion("V1.0");       // api version
-        config.setDocsPath("D://api"); // api docs target path
-        config.setAutoGenerate(Boolean.TRUE);  // auto generate
-        Docs.buildHtmlDocs(config); // execute to generate
+//        DocsConfig config = new DocsConfig();
+//        config.setProjectPath("D:\\demo\\src\\main\\java\\com\\example\\RedisController.java"); // root project path
+//        config.setProjectName("ProjectName"); // project name
+//        config.setApiVersion("V1.0");       // api version
+//        config.setDocsPath("D://api"); // api docs target path
+//        config.setAutoGenerate(Boolean.TRUE);  // auto generate
+//        Docs.buildHtmlDocs(config); // execute to generate
     }
 
 }
