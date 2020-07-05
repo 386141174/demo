@@ -18,20 +18,21 @@
     </div>
 </form>
 <div id="message" th:text="${message}" >Hello,Word!</div>
+<a th:href="@{'/table'}">跳转表格 </a>
+<button type="button" class="layui-btn" id="button" >默认按钮</button>
 <!--<div th:text="${}" >Hello,Word!</div>-->
 <input type="button" id="change"  th:value="s">
 
 </body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" th:src="@{/js/layui.js}"></script>
 <script>
-layui.use(['layer','form'],function () {
-    var layer = layui.layer
-        ,form = layui.form;
+layui.use('layer',function () {
 
-    layer.msg('Hello World');
-})
+
     $(function () {
-        $("#change").on("click",change)
+        // $.getElementById("button").on("click",click)
+        $("#button").on("click",click);
 
     })
 
@@ -42,6 +43,19 @@ layui.use(['layer','form'],function () {
             $("#message").html(data)
         })
     }
+
+
+    function click() {
+        layer.open({
+            type: 2,
+            title: 'layer mobile页',
+            shadeClose: true,
+            shade: 0.8,
+            area: ['380px', '90%'],
+            content: '/table' //iframe的url
+        });
+    }
+})
 
 
 
