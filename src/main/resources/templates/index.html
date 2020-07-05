@@ -11,8 +11,13 @@
 </head>
 <body>
 
-
-<div id="message" th:text="${message.name}" >Hello,Word!</div>
+<form class="layui-form">
+    <label class="layui-form-label">输入框</label>
+    <div class="layui-input-block">
+        <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+</form>
+<div id="message" th:text="${message}" >Hello,Word!</div>
 <!--<div th:text="${}" >Hello,Word!</div>-->
 <input type="button" id="change"  th:value="s">
 

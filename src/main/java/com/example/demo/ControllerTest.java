@@ -18,7 +18,7 @@ public class ControllerTest {
 
 //        model.addAttribute("message","This is Thymeleaf");
         User user = new User();
-        user.setName("bbbbb");
+//        user.setName("bbbbb");
         model.addAttribute("message",user);
         return  "index";
     }
