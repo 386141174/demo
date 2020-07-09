@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
@@ -20,19 +21,18 @@ public class ControllerTest {
     public String index(Model model){
 
 //        model.addAttribute("message","This is Thymeleaf");
-        User user = new User();
+//        User user = new User();
 //        user.setName("bbbbb");
-        model.addAttribute("message",user);
+//        model.addAttribute("message",user);
         return  "index";
     }
 
     @RequestMapping("/change")
-    @ResponseBody
-    public String change(Model model){
+    public ModelAndView change(Model model){
 //        User user = new User();
 //        user.setName("aaaaa");
-//        model.addAttribute("message",user);
-        return "index";
+        model.addAttribute("message","aaaaaa");
+        return model;
     }
 
     @RequestMapping("/table")
@@ -52,6 +52,11 @@ public class ControllerTest {
         response.put("code","0");
         response.put("data",list);
         return response;
+    }
+
+    @RequestMapping("/toLogin")
+    public String toLogin() {
+        return "login";
     }
 
 }
